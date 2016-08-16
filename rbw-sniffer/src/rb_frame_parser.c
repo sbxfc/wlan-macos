@@ -30,17 +30,17 @@ void print_radiotap_header(const u_char * packet){
 
     char* time_str = malloc(80*sizeof(char));
     convert_format_time((time_t)*rf_tsft,time_str);
-    printf("Radiotap Header:\n");
-    printf("Version = %d,Length = %d,",hdr->it_version,hdr->it_len);
-    printf("TSFT = %s ,",time_str);
-    printf("Rate = 500*%d Kbs,",*rf_rate);
-    printf("Antenna signal = %d dBm,",*rf_antenna_signal);
-    printf("Antenna noise = %d dBm,",*rf_antenna_noise);
-    printf("dBm TX power = %d dB,", *rf_dbm_tx_power);
-    printf("Antenna = %d,", *rf_antenna);
-    printf("dB antenna signal = %d,", *rf_db_antsignal);
-    printf("dB antenna noise = %d,", *rf_db_antnoise);
-    printf("\n");
+    printf("Radiotap Header\n");
+    printf("  Version = %d\n",hdr->it_version);
+    printf("  Length = %d\n",hdr->it_len);
+    printf("  TSFT = %s \n",time_str);
+    printf("  Rate = 500*%d Kbs\n",*rf_rate);
+    printf("  Antenna signal = %d dBm\n",*rf_antenna_signal);
+    printf("  Antenna noise = %d dBm\n",*rf_antenna_noise);
+    printf("  dBm TX power = %d dB\n", *rf_dbm_tx_power);
+    printf("  Antenna = %d\n", *rf_antenna);
+    printf("  dB antenna signal = %d\n", *rf_db_antsignal);
+    printf("  dB antenna noise = %d\n", *rf_db_antnoise);
     printf("\n");
     free(time_str);
 }
@@ -49,19 +49,21 @@ void print_radiotap_header(const u_char * packet){
  * 打印出控制帧信息
  * @param data 控制帧数据指针
 */
-void print_frame_control_info(const int16_t * data)
+void print_frame_control_info(const u_char * packet)
 {
-    printf("Frame Control:\n");
-    printf("Protocal version 0x%02x,Type = 0x%02x,Subtype = 0x%02x,",*data & 0x03,*data >> 2 & 0x03,*data >> 4 & 0x0f);
-    printf("To DS = 0x%02x,",*data >> 8 & 0x01);
-    printf("From DS = 0x%02x,",*data >> 9 & 0x01);
-    printf("More Flag = 0x%02x,",*data >> 10 & 0x01);
-    printf("Retry = 0x%02x,",*data >> 11 & 0x01);
-    printf("Pwr Mgt = 0x%02x,",*data >> 12 & 0x01);
-    printf("More Data = 0x%02x,",*data >> 13 & 0x01);
-    printf("WEP = 0x%02x,",*data >> 14 & 0x01);
-    printf("Order = 0x%02x,",*data & 0x01);
-    printf("\n");
+    int16_t* data = get_80211_frame(packet);
+    printf("Frame Control Field\n");
+    printf("  Version 0x%02x \n",*data & 0x03);
+    printf("  Type = 0x%02x \n",*data >> 2 & 0x03);
+    printf("  Subtype = 0x%02x\n",*data >> 4 & 0x0f);
+    printf("  To DS = 0x%02x\n",*data >> 8 & 0x01);
+    printf("  From DS = 0x%02x\n",*data >> 9 & 0x01);
+    printf("  More Flag = 0x%02x\n",*data >> 10 & 0x01);
+    printf("  Retry = 0x%02x\n",*data >> 11 & 0x01);
+    printf("  Pwr Mgt = 0x%02x\n",*data >> 12 & 0x01);
+    printf("  More Data = 0x%02x\n",*data >> 13 & 0x01);
+    printf("  WEP = 0x%02x\n",*data >> 14 & 0x01);
+    printf("  Order = 0x%02x\n",*data & 0x01);
     printf("\n");
 }
 
@@ -98,12 +100,26 @@ void print_beacon (const u_char * packet){
     memset(bssid, 0, sizeof(bssid));
     memcpy(bssid, mpdu+38, *ssid_length);
     bssid[64] = 0;
+    printf("\n");
+    printf("//////////////Beacon frame///////////////\n");
+    printf("【%s】\n",bssid);
+    // print_radiotap_header(packet);
+    // print_frame_control_info(packet);
+	  printf("Destination Address: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[4],mpdu[5],mpdu[6],mpdu[7],mpdu[8],mpdu[9]);
+	  printf("Source address: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[10],mpdu[11],mpdu[12],mpdu[13],mpdu[14],mpdu[15]);
+	  printf("BSS Id: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[16],mpdu[17],mpdu[18],mpdu[19],mpdu[20],mpdu[21]);
+}
 
-    printf("AP:%s(Beacon)\n",bssid);
-    //Beacon为广播包因此地址为ff:ff:ff:ff:ff:ff
-	  printf("Destination Address: %02x:%02x:%02x:%02x:%02x:%02x \n",mpdu[4],mpdu[5],mpdu[6],mpdu[7],mpdu[8],mpdu[9]);
-	  printf("Source Address: %02x:%02x:%02x:%02x:%02x:%02x \n",mpdu[10],mpdu[11],mpdu[12],mpdu[13],mpdu[14],mpdu[15]);
-	  printf("BSS Address: %02x:%02x:%02x:%02x:%02x:%02x \n",mpdu[16],mpdu[17],mpdu[18],mpdu[19],mpdu[20],mpdu[21]);
+void print_authentication_packet(const u_char* packet){
+    printf("\n");
+    printf("/////////////Authentication//////////////\n");
+    print_radiotap_header(packet);
+    print_frame_control_info(packet);
+
+    uint8_t *mpdu = get_80211_frame(packet);
+    printf("Destination Address: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[4],mpdu[5],mpdu[6],mpdu[7],mpdu[8],mpdu[9]);
+	  printf("Source address: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[10],mpdu[11],mpdu[12],mpdu[13],mpdu[14],mpdu[15]);
+	  printf("BSS Id: %hhx:%hhx:%hhx:%hhx:%hhx:%hhx \n",mpdu[16],mpdu[17],mpdu[18],mpdu[19],mpdu[20],mpdu[21]);
 }
 
 

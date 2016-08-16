@@ -28,7 +28,7 @@ void hex(void *ptr, int len) {
   while(len > 0) {
     do {
       if(0 == i%16) {
-	printf("%04x ", i);
+	      printf("%04x ", i);
       }
       val = len > 0 ? *pc : -1;
       if (val >= 0) {
@@ -41,7 +41,7 @@ void hex(void *ptr, int len) {
       i++;
       len--;
       if(0 == i%16) {
-	printf("  %s\n", str);
+	        printf("  %s\n", str);
       }
     } while (i%16);
   }

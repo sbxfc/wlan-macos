@@ -39,9 +39,9 @@ usage(void)
 
 int main(int argc,char* argv[]){
 
-    int rate = 10;
+    int rate = 1;
     int delay = 0;
-    int number = 50000;
+    int number = 1;
     int rst;
     pcap_t *pcap = NULL;
     uint8_t pkt[4092];

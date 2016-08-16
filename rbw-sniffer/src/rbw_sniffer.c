@@ -84,133 +84,136 @@ void process_packet(u_char * args, const struct pcap_pkthdr * header, const u_ch
 
 
           int16_t* frame_control = get_80211_frame(packet);
-          print_radiotap_header(packet);
-          print_frame_control_info(frame_control);
+          // print_radiotap_header(packet);
+          // print_frame_control_info(frame_control);
 
           switch (*frame_control >> 2 & 0x03) {
             case 0x00://管理帧
             {
               switch (*frame_control >> 4 & 0x0f) {
-                case 0x00://0000
-                printf("连接请求~\n");
-                break;
-                case 0x01://0001
-                printf("连接响应~\n");
-                break;
-                case 0x02://0010
-                printf("重连接请求~\n");
-                break;
-                case 0x03://0011
-                printf("重连接联响应~\n");
-                break;
-                case 0x04://0100
-                printf("探测请求~\n");
-                break;
-                case 0x05://0101
-                printf("探测响应~\n");
-                break;
-                case 0x08://1000
-                  print_beacon(packet);
-                break;
-                case 0x09://1001
-                printf("通知传输指示消息~\n");
-                break;
-                case 0x0a://1010
-                printf("解除连接~\n");
-                break;
+                // case 0x00://0000
+                // printf("连接请求~\n");
+                // break;
+                // case 0x01://0001
+                // printf("连接响应~\n");
+                // break;
+                // case 0x02://0010
+                // printf("重连接请求~\n");
+                // break;
+                // case 0x03://0011
+                // printf("重连接联响应~\n");
+                // break;
+                // case 0x04://0100
+                // printf("探测请求~\n");
+                // break;
+                // case 0x05://0101
+                // printf("探测响应~\n");
+                // break;
+                // case 0x08://1000
+                //   print_beacon(packet);
+                // break;
+                // case 0x09://1001
+                // printf("通知传输指示消息~\n");
+                // break;
+                // case 0x0a://1010
+                // printf("解除连接~\n");
+                // break;
                 case 0x0b://1011
-                printf("身份验证~\n");
+                print_authentication_packet(packet);
+                printf("⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️\n");
+                hex(packet,header->len);
+                printf("⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️ ⬆️\n");
                 break;
-                case 0x0c://1100
-                printf("解除验证~\n");
-                break;
+                // case 0x0c://1100
+                // printf("解除验证~\n");
+                // break;
               }
             }
             break;
             case 0x01://控制帧
             {
                 switch (*frame_control >> 4 & 0x0f) {
-                  case 0x0a://1010
-                  printf("Power Save(PS)-Poll(省电-轮询)~\n");
-                  break;
-                  case 0x0b://1011
-                  printf("RTS~请求发送~\n");
-                  break;
-                  case 0x0c://1100
-                  printf("CTS~清除发送~\n");
-                  break;
-                  case 0x0d://1101
-                  printf("ACK确认~\n");
-                  break;
-                  case 0x0e://1110
-                  printf("CF-End 无竞争周期结束~\n");
-                  break;
-                  case 0x0f://1111
-                  printf("CF-End 无竞争周期结束~＋CF-ACK（无竞争周期确认）\n");
-                  break;
+                  // case 0x0a://1010
+                  // printf("Power Save(PS)-Poll(省电-轮询)~\n");
+                  // break;
+                  // case 0x0b://1011
+                  // printf("RTS~请求发送~\n");
+                  // break;
+                  // case 0x0c://1100
+                  // printf("CTS~清除发送~\n");
+                  // break;
+                  // case 0x0d://1101
+                  // printf("ACK确认~\n");
+                  // break;
+                  // case 0x0e://1110
+                  // printf("CF-End 无竞争周期结束~\n");
+                  // break;
+                  // case 0x0f://1111
+                  // printf("CF-End 无竞争周期结束~＋CF-ACK（无竞争周期确认）\n");
+                  // break;
                 }
             }
             break;
             case 0x02://数据帧
             {
               switch (*frame_control >> 4 & 0x0f) {
-                case 0x00://0000
-                printf("Data~\n");
-                break;
-                case 0x01://0001
-                printf("Data+CF-ACK~\n");
-                break;
-                case 0x02://0010
-                printf("Data+CF-Poll~\n");
-                break;
-                case 0x03://0011
-                printf("Data+CF-ACK+CF-Poll~\n");
-                break;
-                case 0x04://0100
-                printf("Null data~未传送数据\n");
-                break;
-                case 0x05://0101
-                printf("CF-ACK~\n");
-                break;
-                case 0x06://0110
-                printf("CF-Poll~\n");
-                break;
-                case 0x07://0111
-                printf("Data+CF-ACK+CF-Poll~\n");
-                break;
-                case 0x08://1000
-                printf("Qos Data~\n");
-                if(is_send_by_ap(frame_control)){
-                    print_from_ap_frame(packet);
-                }
-                else if(is_send_to_ap(frame_control)){
-                    print_to_ap_frame(packet);
-                }
-                else{
-                    printf("//TODO...\n");
-                }
-                break;
-                case 0x09://1001
-                printf("Qos Data + CF-ACK~\n");
-                break;
-                case 0x0a://1010
-                printf("Qos Data + CF-Poll~\n");
-                break;
-                case 0x0b://1011
-                printf("Qos Data + CF-ACK+ CF-Poll~\n");
-                break;
-                case 0x0c://1100
-                printf("QoS Null（未传送数据~\n");
-                break;
-                case 0x0d://1101
-                printf("QoS CF-ACK（未传送数据）\n");
-                break;
-                case 0x0e://1110
-                printf("QoS CF-Poll（未传送数据~\n");
-                break;
-                case 0x0f://1111
-                printf("QoS CF-ACK+ CF-Poll（未传送数据\n");
-                break;
+                // case 0x00://0000
+                // printf("Data~\n");
+                // break;
+                // case 0x01://0001
+                // printf("Data+CF-ACK~\n");
+                // break;
+                // case 0x02://0010
+                // printf("Data+CF-Poll~\n");
+                // break;
+                // case 0x03://0011
+                // printf("Data+CF-ACK+CF-Poll~\n");
+                // break;
+                // case 0x04://0100
+                // printf("Null data~未传送数据\n");
+                // break;
+                // case 0x05://0101
+                // printf("CF-ACK~\n");
+                // break;
+                // case 0x06://0110
+                // printf("CF-Poll~\n");
+                // break;
+                // case 0x07://0111
+                // printf("Data+CF-ACK+CF-Poll~\n");
+                // break;
+                // case 0x08://1000
+                // printf("Qos Data~\n");
+                // if(is_send_by_ap(frame_control)){
+                //     print_from_ap_frame(packet);
+                // }
+                // else if(is_send_to_ap(frame_control)){
+                //     print_to_ap_frame(packet);
+                // }
+                // else{
+                //     printf("//TODO...\n");
+                // }
+                // break;
+                // case 0x09://1001
+                // printf("Qos Data + CF-ACK~\n");
+                // break;
+                // case 0x0a://1010
+                // printf("Qos Data + CF-Poll~\n");
+                // break;
+                // case 0x0b://1011
+                // printf("Qos Data + CF-ACK+ CF-Poll~\n");
+                // break;
+                // case 0x0c://1100
+                // printf("QoS Null（未传送数据~\n");
+                // break;
+                // case 0x0d://1101
+                // printf("QoS CF-ACK（未传送数据）\n");
+                // break;
+                // case 0x0e://1110
+                // printf("QoS CF-Poll（未传送数据~\n");
+                // break;
+                // case 0x0f://1111
+                // printf("QoS CF-ACK+ CF-Poll（未传送数据\n");
+                // break;
               }
             }
             break;
@@ -219,5 +222,5 @@ void process_packet(u_char * args, const struct pcap_pkthdr * header, const u_ch
       //  }
 
       // hex((void *)packet, header->len);
-      printf("-----------------------------------------\n");
+      // printf("-----------------------------------------\n");
 }
