@@ -1,6 +1,13 @@
+#描述
+
+用来断开工作站(Station)与接入点(AP)的连接。
+
+#运行环境
+
+macOS
 
 #编译&运行
 
-  $ make
-  $ ./deauth <interface> -s <station> -a <AP>
-  $ ./deauth en1 -s 8c:be:be:62:a8:95 -a 58:66:ba:92:93:70 -r 1 -n 5
+  $make
+  $./deauth <interface> -s <Station> -a <Access points>
+  $./deauth en1 -s b0:65:bd:19:b0:73 -a d8:24:bd:76:5c:30 --rate 10 --number 5000
