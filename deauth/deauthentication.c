@@ -41,7 +41,7 @@ int main(int argc,char* argv[]){
 
     int rate = 1;
     int delay = 0;
-    int number = 1;
+    int number = 10;
     int rst;
     pcap_t *pcap = NULL;
     uint8_t pkt[4092];
