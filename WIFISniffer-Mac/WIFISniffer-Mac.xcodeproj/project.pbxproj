@@ -1,0 +1,658 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CC0BA5471D891F3600BCF4EC /* mac.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0BA5451D891F3600BCF4EC /* mac.m */; };
+		CC0BA54A1D8920C500BCF4EC /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = CC0BA5491D8920C500BCF4EC /* Device.m */; };
+		CC319EE51D82A9B5001874F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319EE41D82A9B5001874F6 /* AppDelegate.m */; };
+		CC319EE81D82A9B5001874F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319EE71D82A9B5001874F6 /* main.m */; };
+		CC319EEA1D82A9B5001874F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC319EE91D82A9B5001874F6 /* Assets.xcassets */; };
+		CC319EED1D82A9B5001874F6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC319EEB1D82A9B5001874F6 /* MainMenu.xib */; };
+		CC319EF81D82A9B5001874F6 /* WIFISniffer_MacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319EF71D82A9B5001874F6 /* WIFISniffer_MacTests.m */; };
+		CC319F031D82A9B5001874F6 /* WIFISniffer_MacUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319F021D82A9B5001874F6 /* WIFISniffer_MacUITests.m */; };
+		CC319F171D82AA39001874F6 /* WIFIListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319F151D82AA39001874F6 /* WIFIListViewController.m */; };
+		CC319F181D82AA39001874F6 /* WIFIListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC319F161D82AA39001874F6 /* WIFIListViewController.xib */; };
+		CC319F231D82BDE3001874F6 /* DeviceListWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319F211D82BDE3001874F6 /* DeviceListWindowController.m */; };
+		CC319F241D82BDE3001874F6 /* DeviceListWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC319F221D82BDE3001874F6 /* DeviceListWindowController.xib */; };
+		CC319F281D867B26001874F6 /* WIFISniffer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319F271D867B26001874F6 /* WIFISniffer.m */; };
+		CC319F2B1D867E82001874F6 /* libpcap.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC319F2A1D867E82001874F6 /* libpcap.tbd */; };
+		CC319F311D868809001874F6 /* IEEE_80211_Packet.m in Sources */ = {isa = PBXBuildFile; fileRef = CC319F301D868809001874F6 /* IEEE_80211_Packet.m */; };
+		CC7F165C1D925E1300B84988 /* crc.c in Sources */ = {isa = PBXBuildFile; fileRef = CC7F165A1D925E1300B84988 /* crc.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CC319EF41D82A9B5001874F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC319ED81D82A9B5001874F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC319EDF1D82A9B5001874F6;
+			remoteInfo = "WIFISniffer-Mac";
+		};
+		CC319EFF1D82A9B5001874F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CC319ED81D82A9B5001874F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC319EDF1D82A9B5001874F6;
+			remoteInfo = "WIFISniffer-Mac";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CC0BA5451D891F3600BCF4EC /* mac.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mac.m; path = Utils/mac.m; sourceTree = "<group>"; };
+		CC0BA5461D891F3600BCF4EC /* mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mac.h; path = Utils/mac.h; sourceTree = "<group>"; };
+		CC0BA5481D8920C500BCF4EC /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		CC0BA5491D8920C500BCF4EC /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		CC319EE01D82A9B5001874F6 /* WIFISniffer-Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WIFISniffer-Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC319EE31D82A9B5001874F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CC319EE41D82A9B5001874F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CC319EE71D82A9B5001874F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CC319EE91D82A9B5001874F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC319EEC1D82A9B5001874F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CC319EEE1D82A9B5001874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC319EF31D82A9B5001874F6 /* WIFISniffer-MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WIFISniffer-MacTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC319EF71D82A9B5001874F6 /* WIFISniffer_MacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIFISniffer_MacTests.m; sourceTree = "<group>"; };
+		CC319EF91D82A9B5001874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC319EFE1D82A9B5001874F6 /* WIFISniffer-MacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WIFISniffer-MacUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC319F021D82A9B5001874F6 /* WIFISniffer_MacUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WIFISniffer_MacUITests.m; sourceTree = "<group>"; };
+		CC319F041D82A9B5001874F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC319F141D82AA39001874F6 /* WIFIListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WIFIListViewController.h; path = "WIFI List/Window Controllers/WIFIListViewController.h"; sourceTree = "<group>"; };
+		CC319F151D82AA39001874F6 /* WIFIListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WIFIListViewController.m; path = "WIFI List/Window Controllers/WIFIListViewController.m"; sourceTree = "<group>"; };
+		CC319F161D82AA39001874F6 /* WIFIListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WIFIListViewController.xib; path = "WIFI List/Window Controllers/WIFIListViewController.xib"; sourceTree = "<group>"; };
+		CC319F191D82ADD8001874F6 /* SysMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SysMacros.h; sourceTree = "<group>"; };
+		CC319F201D82BDE3001874F6 /* DeviceListWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListWindowController.h; sourceTree = "<group>"; };
+		CC319F211D82BDE3001874F6 /* DeviceListWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListWindowController.m; sourceTree = "<group>"; };
+		CC319F221D82BDE3001874F6 /* DeviceListWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceListWindowController.xib; sourceTree = "<group>"; };
+		CC319F261D867B26001874F6 /* WIFISniffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WIFISniffer.h; path = "WIFI Sniffer/WIFISniffer.h"; sourceTree = "<group>"; };
+		CC319F271D867B26001874F6 /* WIFISniffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WIFISniffer.m; path = "WIFI Sniffer/WIFISniffer.m"; sourceTree = "<group>"; };
+		CC319F2A1D867E82001874F6 /* libpcap.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpcap.tbd; path = usr/lib/libpcap.tbd; sourceTree = SDKROOT; };
+		CC319F2F1D868809001874F6 /* IEEE_80211_Packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEEE_80211_Packet.h; path = "WIFI Sniffer/IEEE_80211_Packet.h"; sourceTree = "<group>"; };
+		CC319F301D868809001874F6 /* IEEE_80211_Packet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IEEE_80211_Packet.m; path = "WIFI Sniffer/IEEE_80211_Packet.m"; sourceTree = "<group>"; };
+		CC319F331D868BD1001874F6 /* packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = packet.h; path = "WIFI Sniffer/packet.h"; sourceTree = "<group>"; };
+		CC7F165A1D925E1300B84988 /* crc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = crc.c; path = Utils/crc.c; sourceTree = "<group>"; };
+		CC7F165B1D925E1300B84988 /* crc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = crc.h; path = Utils/crc.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC319EDD1D82A9B5001874F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC319F2B1D867E82001874F6 /* libpcap.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EF01D82A9B5001874F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EFB1D82A9B5001874F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CC0BA5441D891F2700BCF4EC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CC7F165A1D925E1300B84988 /* crc.c */,
+				CC7F165B1D925E1300B84988 /* crc.h */,
+				CC0BA5451D891F3600BCF4EC /* mac.m */,
+				CC0BA5461D891F3600BCF4EC /* mac.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		CC319ED71D82A9B5001874F6 = {
+			isa = PBXGroup;
+			children = (
+				CC319F291D867E5D001874F6 /* Frameworks */,
+				CC319EE21D82A9B5001874F6 /* WIFISniffer-Mac */,
+				CC319EF61D82A9B5001874F6 /* WIFISniffer-MacTests */,
+				CC319F011D82A9B5001874F6 /* WIFISniffer-MacUITests */,
+				CC319EE11D82A9B5001874F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC319EE11D82A9B5001874F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC319EE01D82A9B5001874F6 /* WIFISniffer-Mac.app */,
+				CC319EF31D82A9B5001874F6 /* WIFISniffer-MacTests.xctest */,
+				CC319EFE1D82A9B5001874F6 /* WIFISniffer-MacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC319EE21D82A9B5001874F6 /* WIFISniffer-Mac */ = {
+			isa = PBXGroup;
+			children = (
+				CC0BA5441D891F2700BCF4EC /* Utils */,
+				CC319F251D867B01001874F6 /* WIFI Sniffer */,
+				CC319F1C1D82BDA3001874F6 /* Device List */,
+				CC319F101D82AA07001874F6 /* WIFI List */,
+				CC319EE31D82A9B5001874F6 /* AppDelegate.h */,
+				CC319EE41D82A9B5001874F6 /* AppDelegate.m */,
+				CC319F191D82ADD8001874F6 /* SysMacros.h */,
+				CC319EE61D82A9B5001874F6 /* Supporting Files */,
+			);
+			path = "WIFISniffer-Mac";
+			sourceTree = "<group>";
+		};
+		CC319EE61D82A9B5001874F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CC319EE91D82A9B5001874F6 /* Assets.xcassets */,
+				CC319EEB1D82A9B5001874F6 /* MainMenu.xib */,
+				CC319EEE1D82A9B5001874F6 /* Info.plist */,
+				CC319EE71D82A9B5001874F6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CC319EF61D82A9B5001874F6 /* WIFISniffer-MacTests */ = {
+			isa = PBXGroup;
+			children = (
+				CC319EF71D82A9B5001874F6 /* WIFISniffer_MacTests.m */,
+				CC319EF91D82A9B5001874F6 /* Info.plist */,
+			);
+			path = "WIFISniffer-MacTests";
+			sourceTree = "<group>";
+		};
+		CC319F011D82A9B5001874F6 /* WIFISniffer-MacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F021D82A9B5001874F6 /* WIFISniffer_MacUITests.m */,
+				CC319F041D82A9B5001874F6 /* Info.plist */,
+			);
+			path = "WIFISniffer-MacUITests";
+			sourceTree = "<group>";
+		};
+		CC319F101D82AA07001874F6 /* WIFI List */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F131D82AA19001874F6 /* Models */,
+				CC319F121D82AA14001874F6 /* Views */,
+				CC319F111D82AA0E001874F6 /* Window Controllers */,
+			);
+			name = "WIFI List";
+			sourceTree = "<group>";
+		};
+		CC319F111D82AA0E001874F6 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F141D82AA39001874F6 /* WIFIListViewController.h */,
+				CC319F151D82AA39001874F6 /* WIFIListViewController.m */,
+				CC319F161D82AA39001874F6 /* WIFIListViewController.xib */,
+			);
+			name = "Window Controllers";
+			sourceTree = "<group>";
+		};
+		CC319F121D82AA14001874F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		CC319F131D82AA19001874F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CC319F1C1D82BDA3001874F6 /* Device List */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F1D1D82BDB1001874F6 /* Models */,
+				CC319F1E1D82BDB1001874F6 /* Views */,
+				CC319F1F1D82BDB1001874F6 /* Window Controllers */,
+			);
+			name = "Device List";
+			sourceTree = "<group>";
+		};
+		CC319F1D1D82BDB1001874F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC0BA5481D8920C500BCF4EC /* Device.h */,
+				CC0BA5491D8920C500BCF4EC /* Device.m */,
+			);
+			name = Models;
+			path = "Device List/Models";
+			sourceTree = "<group>";
+		};
+		CC319F1E1D82BDB1001874F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			path = "Device List/Views";
+			sourceTree = "<group>";
+		};
+		CC319F1F1D82BDB1001874F6 /* Window Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F201D82BDE3001874F6 /* DeviceListWindowController.h */,
+				CC319F211D82BDE3001874F6 /* DeviceListWindowController.m */,
+				CC319F221D82BDE3001874F6 /* DeviceListWindowController.xib */,
+			);
+			name = "Window Controllers";
+			path = "Device List/Window Controllers";
+			sourceTree = "<group>";
+		};
+		CC319F251D867B01001874F6 /* WIFI Sniffer */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F261D867B26001874F6 /* WIFISniffer.h */,
+				CC319F271D867B26001874F6 /* WIFISniffer.m */,
+				CC319F2F1D868809001874F6 /* IEEE_80211_Packet.h */,
+				CC319F301D868809001874F6 /* IEEE_80211_Packet.m */,
+				CC319F331D868BD1001874F6 /* packet.h */,
+			);
+			name = "WIFI Sniffer";
+			sourceTree = "<group>";
+		};
+		CC319F291D867E5D001874F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC319F2A1D867E82001874F6 /* libpcap.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CC319EDF1D82A9B5001874F6 /* WIFISniffer-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC319F071D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-Mac" */;
+			buildPhases = (
+				CC319EDC1D82A9B5001874F6 /* Sources */,
+				CC319EDD1D82A9B5001874F6 /* Frameworks */,
+				CC319EDE1D82A9B5001874F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WIFISniffer-Mac";
+			productName = "WIFISniffer-Mac";
+			productReference = CC319EE01D82A9B5001874F6 /* WIFISniffer-Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CC319EF21D82A9B5001874F6 /* WIFISniffer-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC319F0A1D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-MacTests" */;
+			buildPhases = (
+				CC319EEF1D82A9B5001874F6 /* Sources */,
+				CC319EF01D82A9B5001874F6 /* Frameworks */,
+				CC319EF11D82A9B5001874F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC319EF51D82A9B5001874F6 /* PBXTargetDependency */,
+			);
+			name = "WIFISniffer-MacTests";
+			productName = "WIFISniffer-MacTests";
+			productReference = CC319EF31D82A9B5001874F6 /* WIFISniffer-MacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CC319EFD1D82A9B5001874F6 /* WIFISniffer-MacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC319F0D1D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-MacUITests" */;
+			buildPhases = (
+				CC319EFA1D82A9B5001874F6 /* Sources */,
+				CC319EFB1D82A9B5001874F6 /* Frameworks */,
+				CC319EFC1D82A9B5001874F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC319F001D82A9B5001874F6 /* PBXTargetDependency */,
+			);
+			name = "WIFISniffer-MacUITests";
+			productName = "WIFISniffer-MacUITests";
+			productReference = CC319EFE1D82A9B5001874F6 /* WIFISniffer-MacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CC319ED81D82A9B5001874F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = me.rungame.sbxfc;
+				TargetAttributes = {
+					CC319EDF1D82A9B5001874F6 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					CC319EF21D82A9B5001874F6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CC319EDF1D82A9B5001874F6;
+					};
+					CC319EFD1D82A9B5001874F6 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = CC319EDF1D82A9B5001874F6;
+					};
+				};
+			};
+			buildConfigurationList = CC319EDB1D82A9B5001874F6 /* Build configuration list for PBXProject "WIFISniffer-Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC319ED71D82A9B5001874F6;
+			productRefGroup = CC319EE11D82A9B5001874F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CC319EDF1D82A9B5001874F6 /* WIFISniffer-Mac */,
+				CC319EF21D82A9B5001874F6 /* WIFISniffer-MacTests */,
+				CC319EFD1D82A9B5001874F6 /* WIFISniffer-MacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CC319EDE1D82A9B5001874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC319EEA1D82A9B5001874F6 /* Assets.xcassets in Resources */,
+				CC319EED1D82A9B5001874F6 /* MainMenu.xib in Resources */,
+				CC319F181D82AA39001874F6 /* WIFIListViewController.xib in Resources */,
+				CC319F241D82BDE3001874F6 /* DeviceListWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EF11D82A9B5001874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EFC1D82A9B5001874F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CC319EDC1D82A9B5001874F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC319F171D82AA39001874F6 /* WIFIListViewController.m in Sources */,
+				CC0BA5471D891F3600BCF4EC /* mac.m in Sources */,
+				CC0BA54A1D8920C500BCF4EC /* Device.m in Sources */,
+				CC7F165C1D925E1300B84988 /* crc.c in Sources */,
+				CC319EE81D82A9B5001874F6 /* main.m in Sources */,
+				CC319EE51D82A9B5001874F6 /* AppDelegate.m in Sources */,
+				CC319F231D82BDE3001874F6 /* DeviceListWindowController.m in Sources */,
+				CC319F311D868809001874F6 /* IEEE_80211_Packet.m in Sources */,
+				CC319F281D867B26001874F6 /* WIFISniffer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EEF1D82A9B5001874F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC319EF81D82A9B5001874F6 /* WIFISniffer_MacTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC319EFA1D82A9B5001874F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC319F031D82A9B5001874F6 /* WIFISniffer_MacUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CC319EF51D82A9B5001874F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC319EDF1D82A9B5001874F6 /* WIFISniffer-Mac */;
+			targetProxy = CC319EF41D82A9B5001874F6 /* PBXContainerItemProxy */;
+		};
+		CC319F001D82A9B5001874F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CC319EDF1D82A9B5001874F6 /* WIFISniffer-Mac */;
+			targetProxy = CC319EFF1D82A9B5001874F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CC319EEB1D82A9B5001874F6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CC319EEC1D82A9B5001874F6 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CC319F051D82A9B5001874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CC319F061D82A9B5001874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CC319F081D82A9B5001874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CC319F091D82A9B5001874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-Mac/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CC319F0B1D82A9B5001874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIFISniffer-Mac.app/Contents/MacOS/WIFISniffer-Mac";
+			};
+			name = Debug;
+		};
+		CC319F0C1D82A9B5001874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-MacTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-MacTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WIFISniffer-Mac.app/Contents/MacOS/WIFISniffer-Mac";
+			};
+			name = Release;
+		};
+		CC319F0E1D82A9B5001874F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WIFISniffer-Mac";
+			};
+			name = Debug;
+		};
+		CC319F0F1D82A9B5001874F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "WIFISniffer-MacUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.rungame.sbxfc.WIFISniffer-MacUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "WIFISniffer-Mac";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CC319EDB1D82A9B5001874F6 /* Build configuration list for PBXProject "WIFISniffer-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC319F051D82A9B5001874F6 /* Debug */,
+				CC319F061D82A9B5001874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC319F071D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC319F081D82A9B5001874F6 /* Debug */,
+				CC319F091D82A9B5001874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC319F0A1D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC319F0B1D82A9B5001874F6 /* Debug */,
+				CC319F0C1D82A9B5001874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CC319F0D1D82A9B5001874F6 /* Build configuration list for PBXNativeTarget "WIFISniffer-MacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC319F0E1D82A9B5001874F6 /* Debug */,
+				CC319F0F1D82A9B5001874F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CC319ED81D82A9B5001874F6 /* Project object */;
+}
