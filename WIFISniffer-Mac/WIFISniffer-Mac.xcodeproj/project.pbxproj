@@ -138,6 +138,7 @@
 		CC319EE21D82A9B5001874F6 /* WIFISniffer-Mac */ = {
 			isa = PBXGroup;
 			children = (
+				CC9643041E49A36A00D05270 /* Vendor */,
 				CC0BA5441D891F2700BCF4EC /* Utils */,
 				CC319F251D867B01001874F6 /* WIFI Sniffer */,
 				CC319F1C1D82BDA3001874F6 /* Device List */,
@@ -270,6 +271,21 @@
 				CC319F2A1D867E82001874F6 /* libpcap.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC9643041E49A36A00D05270 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CC9643051E49A3A700D05270 /* aircrack-ng-src */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		CC9643051E49A3A700D05270 /* aircrack-ng-src */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "aircrack-ng-src";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

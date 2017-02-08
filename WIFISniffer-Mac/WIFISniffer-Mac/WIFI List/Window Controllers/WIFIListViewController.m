@@ -26,15 +26,20 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    [self initViewStyle];
     
     _wListData = @[].mutableCopy;
     
     //设置一下窗口
-    [self.window setTitle:@"WIFI列表"];
+    [self.window setTitle:@"WIFI信号"];
     [self.window setContentSize:WINDOW_SIZE];
 
     //开始扫描WLAN网络
     [self wlanScan:nil];
+}
+
+-(void)initViewStyle{
+    _tableView.allowsColumnSelection = false;
 }
 
 #pragma mark Actions
@@ -50,7 +55,10 @@
         NSError * error = nil;
         NSArray * networks = [[interface scanForNetworksWithSSID:nil error:&error] allObjects];
         if (error){
-            [self alertError:[NSString stringWithFormat:@"扫描失败,请检查WIFI是否已开启 [%@]",error]];
+            NSString* msg = @"请在系统设置里先开启WIFI连接!";
+            NSString* fullMsg  = [NSString stringWithFormat:@"%@%@",msg,error];
+            [self alertError:msg];
+            NSLog(@"ERROR:%@",fullMsg);
             return;
         }
         if (networks) {
@@ -80,6 +88,11 @@
  *  @param listData 扫描到的wifi热点集合
  */
 - (void)updateUI:(NSArray *)wifiList {
+    //按照信号强度对列表进行排序
+    NSSortDescriptor *sortDesc = [NSSortDescriptor sortDescriptorWithKey:@"rssi" ascending:NO];
+    NSArray *desc = [NSArray arrayWithObjects:sortDesc, nil];
+    [wifiList sortedArrayUsingDescriptors:desc];
+    
     _wListData = [wifiList mutableCopy];
     [_tableView reloadData];
 }
@@ -100,13 +113,16 @@
         [aps addObject:[_wListData objectAtIndex:idx]];
     }];
     
-    _deviceWindow = [[DeviceListWindowController alloc] initWithWindowNibName:@"DeviceListWindowController"];
-    [[_deviceWindow window] center];
-    [_deviceWindow setAPs:aps];
-    [[_deviceWindow window] orderFront:nil];
-    
-    //关闭当前窗口
-    [self.window orderOut:nil];
+    if([aps count]>0){
+        
+        _deviceWindow = [[DeviceListWindowController alloc] initWithWindowNibName:@"DeviceListWindowController"];
+        [[_deviceWindow window] center];
+        [_deviceWindow setAPs:aps];
+        [[_deviceWindow window] orderFront:nil];
+        
+        //关闭当前窗口
+        [self.window orderOut:nil];
+    }
 }
 
 #pragma mark NSTableView DataSource
@@ -117,13 +133,17 @@
     NSString* identifier = [tableColumn identifier];
     if ([identifier isEqualToString:@"channel"]){
         return [NSNumber numberWithInteger:network.wlanChannel.channelNumber];
-    }else if ([identifier isEqualToString:@"essid"]) {
+    }
+    else if ([identifier isEqualToString:@"essid"]) {
         return network.ssid;
-    }else if ([identifier isEqualToString:@"bssid"]) {
+    }
+    else if ([identifier isEqualToString:@"bssid"]) {
         return network.bssid;
-    }else if ([identifier isEqualToString:@"enc"]) {
+    }
+    else if ([identifier isEqualToString:@"enc"]) {
         return [self securityTypeString:network];
-    }else if ([identifier isEqualToString:@"rssi"]) {
+    }
+    else if ([identifier isEqualToString:@"rssi"]) {
         return [[NSNumber numberWithInteger:network.rssiValue] description];
     }
     return nil;

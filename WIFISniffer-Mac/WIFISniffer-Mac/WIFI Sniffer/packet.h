@@ -33,4 +33,18 @@ typedef struct {
     // unsigned char mac4[6];
 } __attribute__((__packed__)) MACHeader;
 
+
+/**
+ * Logic-link Control 
+ */
+struct LLC_hdr {
+    uint8_t dsap;
+    uint8_t ssap;
+    uint8_t control_field;
+    uint8_t org_code[3];
+    uint16_t type;
+#define LLC_TYPE_IP 0x0008
+};
+
+
 #endif /* packet_h */
